@@ -14,7 +14,7 @@ export const routes = [
   },
   {
     path: "/category/mens-shirts",
-    element: <div>men tshirt</div>,
+    element: <div style={{ height: "200vh" }}>men tshirt</div>,
   },
   {
     path: "*",
