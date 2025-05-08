@@ -9,11 +9,12 @@ import {
   List,
   ListItem,
   ListItemText,
+  TextField,
+  ListItemButton,
 } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import TextField from "@mui/material/TextField";
 import { topCategories } from "@/lib/categories";
 
 const Header: React.FC = () => {
@@ -63,9 +64,30 @@ const Header: React.FC = () => {
             {isDesktop ? (
               <TextField
                 id="outlined-basic"
-                label="Search"
+                label="Outlined"
                 variant="outlined"
                 size="small"
+                sx={{
+                  width: "200px",
+                  "& .MuiOutlinedInput-root": {
+                    color: "black",
+                    "& fieldset": {
+                      borderColor: "black",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "black",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "black",
+                    },
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "black",
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "black",
+                  },
+                }}
               />
             ) : (
               <IconButton onClick={() => setMobileMenuOpen(true)}>
@@ -150,9 +172,9 @@ const Header: React.FC = () => {
             <List>
               {Object.keys(topCategories).map((category) => (
                 <ListItem
-                  button
                   key={category}
                   onClick={() => handleMobileCategoryClick(category)}
+                  sx={{ cursor: "pointer" }}
                 >
                   <ListItemText primary={category} />
                 </ListItem>
@@ -174,9 +196,9 @@ const Header: React.FC = () => {
               {activeMobileCategory &&
                 topCategories[activeMobileCategory].map((subcategory) => (
                   <ListItem
-                    button
                     key={subcategory}
                     onClick={() => handleSubcategoryClick(subcategory)}
+                    sx={{ cursor: "pointer" }}
                   >
                     <ListItemText primary={subcategory.replace(/-/g, " ")} />
                   </ListItem>
