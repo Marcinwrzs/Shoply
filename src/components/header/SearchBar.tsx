@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 
-const SearchBar = () => (
+const SearchBar: React.FC = () => (
   <TextField
     id="outlined-basic"
     label="Outlined"
