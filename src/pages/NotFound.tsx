@@ -1,7 +1,4 @@
-// src/components/Header.tsx
-import { Link } from "react-router-dom";
-
-const NotFound = () => {
+const NotFound: React.FC = () => {
   return <div>NotFound</div>;
 };
 
